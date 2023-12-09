@@ -1,0 +1,14 @@
+.searchInput {
+    width: 70%;
+    height: 35px;
+    border-radius: 100px;
+    border: 1px solid #cecece;
+    color: #cecece;
+    padding-left: 15px;
+    box-shadow: rgba(149, 157, 165, 0.02) 0px 8px 24px;
+}
+
+::-webkit-input-placeholder {
+    color: #cecece;
+}
+

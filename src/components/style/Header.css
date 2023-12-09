@@ -1,0 +1,39 @@
+.header {
+    background-color: #192230;
+    color: #ffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 4px solid #02b143;
+    padding: 15px;
+}
+    .header__image {
+        height: auto;
+        max-width: 30%;
+        margin-block: 10px;
+    }
+    .header__boxText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        .boxText__title {
+            padding-block: 10px;
+            font-size: 23px;
+            font-family: "Loja", serif;
+            font-weight: 500;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .boxText__button {
+            background-color: #02b143;
+            color: #ffff;
+            font-size: 25px;
+            font-family: "Loja", serif;
+            border-style: double;
+            border-width: 3.5px;
+            border-color: #000;
+            border-radius: 8px;
+            padding: 3px 10px;
+        }

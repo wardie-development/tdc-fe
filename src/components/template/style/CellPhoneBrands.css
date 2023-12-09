@@ -1,0 +1,26 @@
+.cellPhoneBrands {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+    .listBrands {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 25px;
+        margin: 0;;
+    }
+        .itemBrands {
+            list-style: none;
+        }
+            .itemBrands__name {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                color: #2359aa;
+                transition: all 0.3s ease-in-out;
+                font-weight: lighter;
+            }
+            .itemBrands__name:hover {
+                cursor: pointer;
+                color: #02b143;
+            }
+
