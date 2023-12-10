@@ -1,0 +1,19 @@
+.compatibilitiesTitleGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding-block: 5px;
+    border-radius: 8px;
+    margin-inline: auto;
+    margin-bottom: 15px;
+}
+
+    .compatibilitiesTitleGroup__title {
+        color: #fff;
+        font-family: "Loja", serif;
+        font-size: 17px;
+        text-transform: uppercase;
+        display: flex;
+        margin: 0 0 0 10px;
+    }

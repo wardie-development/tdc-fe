@@ -1,0 +1,39 @@
+.screenProtectors {
+    width: 95%;
+}
+
+.screenProtectors__empty {
+    text-align: center;
+    font-weight: 100;
+    font-size: 20px;
+    font-family: Poppins, sans-serif;
+}
+
+.screenProtectors__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.listCompatibilities__item {
+    position: relative;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 13px;
+    margin-top: 20px;
+    padding: 15px 15px 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.listCompatibilities__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../../assets/water-mark.png");
+    opacity: .1;
+}

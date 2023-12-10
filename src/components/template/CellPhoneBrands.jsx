@@ -6,13 +6,13 @@ export const CellPhoneBrands = () => {
   const [brandNames, setBrandNames] = React.useState([])
 
   React.useEffect(() => {
-    const token = 'bb23c6751efd4d368cac055d505ef6f0'
+    const token = 'c8df1335445043df8e821f81153782fe'
     getBrandNames(token).then(response => setBrandNames(response))
   },[])
 
   return (
     <section className='cellPhoneBrands'>
-      <ul className='cellPhoneBrands__list listBrands'>
+      <ul className='cellPhoneBrands__list listCompatibilities'>
         {brandNames.map((brandName, index) => (
           <li className='listBrands__item itemBrands' key={`brandName-${index}`}>
             <p className='itemBrands__name'>{brandName.name}</p>

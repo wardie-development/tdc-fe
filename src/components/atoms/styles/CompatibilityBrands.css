@@ -1,0 +1,16 @@
+.compatibilityItems {
+    padding: 0;
+    margin: 0;
+}
+
+.compatibilityItems__item {
+    list-style: none;
+    padding: 10px 0;
+    border: 0 solid;
+    border-top-width: 1px;
+}
+.compatibilityRow__text {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 300;
+}

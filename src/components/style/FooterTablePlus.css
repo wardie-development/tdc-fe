@@ -1,0 +1,50 @@
+.footerTablePlus {
+    position: fixed;
+    backdrop-filter: blur(2px);
+    width: calc(100% - 60px);
+    height: 40px;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 30px;
+}
+
+.footerTablePlus__suggestion {
+    font-size: 14px;
+    text-transform: uppercase;
+    background: #02b143;
+    color: #fff;
+    font-weight: 200;
+    opacity: .5;
+    padding-inline: 15px;
+    padding-block: 1px;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+.footerTablePlus__suggestion:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.footerTablePlus__upButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #02b143;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    border: 0;
+    opacity: .5;
+}
+
+.footerTablePlus__upButton:hover {
+    opacity: 1;
+    cursor: pointer;
+}

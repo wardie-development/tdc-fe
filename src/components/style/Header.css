@@ -9,8 +9,7 @@
     padding: 15px;
 }
     .header__image {
-        height: auto;
-        max-width: 30%;
+        height: 50px;
         margin-block: 10px;
     }
     .header__boxText {
@@ -20,7 +19,7 @@
     }
         .boxText__title {
             padding-block: 10px;
-            font-size: 23px;
+            font-size: 21px;
             font-family: "Loja", serif;
             font-weight: 500;
             margin: 0;
@@ -29,10 +28,10 @@
         .boxText__button {
             background-color: #02b143;
             color: #ffff;
-            font-size: 25px;
+            font-size: 17px;
             font-family: "Loja", serif;
             border-style: double;
-            border-width: 3.5px;
+            border-width: 3px;
             border-color: #000;
             border-radius: 8px;
             padding: 3px 10px;
