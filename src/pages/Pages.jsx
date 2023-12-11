@@ -9,14 +9,14 @@ export const Pages = () => {
   React.useEffect(() => {
     const isInAuthenticate = window.location.href.includes('autenticar')
     const token = localStorage.getItem('token')
-    
+
     if (!token && !isInAuthenticate) {
       navigate('/autenticar/')
     } else if (token && isInAuthenticate) {
       navigate('/tabela-plus/')
     }
-  })
-  
+  }, [navigate])
+
   return (
     <Routes>
       <Route path="/tabela-plus/" element={<TablePlus />} />

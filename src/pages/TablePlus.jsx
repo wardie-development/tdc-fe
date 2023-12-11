@@ -17,7 +17,7 @@ export const TablePlus = () => {
       localStorage.removeItem('token')
       navigate('/autenticar/')
     })
-  }, [])
+  }, [navigate])
 
   return (
     <>

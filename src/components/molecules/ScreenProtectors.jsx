@@ -19,6 +19,7 @@ export const ScreenProtectors = ({screenProtectorsList, search, isEmpty = false}
           <li
             className="listCompatibilities__item"
             key={`screenProtector-${index}`}
+            id={screenProtector.title}
             style={{borderColor: `${screenProtector.color}77`}}
           >
             <CompatibilityBrandsTitle screenProtector={screenProtector}/>
