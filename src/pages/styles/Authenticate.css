@@ -8,9 +8,8 @@
 
 .authenticationForm {
     background: #eaeaea;
-    border-radius: 15px;
-    width: 85%;
-    height: 350px;
+    border-radius: 10px;
+    width: 82%;
     overflow: hidden;
 }
 
@@ -28,7 +27,7 @@
 }
 .authenticationForm__title {
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     margin: 0 0 20px;
 }
