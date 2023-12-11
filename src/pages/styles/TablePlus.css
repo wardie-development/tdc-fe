@@ -1,3 +1,11 @@
-p {
-
+.newCellPhoneList {
+    margin: 0;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 500px;
+}
+.newCellPhoneList__item {
+    list-style: none;
+    color: #2359aa;
+    border-top: solid 1px #2359aa;
 }

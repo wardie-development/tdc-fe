@@ -5,9 +5,10 @@
 }
     .listCompatibilities {
         display: flex;
+        align-items: center;
         justify-content: space-evenly;
-        padding: 15px 80px;
         margin: 0;
+        padding: 0;
     }
         .itemBrands {
             list-style: none;

@@ -27,3 +27,10 @@ export const sendSuggestion = async (token, payload) => {
   const response = await api.post('/brands/suggestion/', payload, { headers: { 'Authorization': token }});
   return response.data;
 }
+
+export const getNewCellPhones = async (token) => {
+  const response = await api.get('/brands/news/', { headers: { 'Authorization': token }});
+  return response.data;
+}
+
+

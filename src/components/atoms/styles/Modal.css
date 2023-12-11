@@ -1,0 +1,54 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+    .modal__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #eeeeee;
+        border-radius: 8px;
+        padding: 20px;
+        width: 80%;
+    }
+    .contentBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #2359aa;
+        color: #fff;
+        border-radius: 8px;
+        padding: 10px;
+    }
+        .contentBox__title {
+            font-family: "Loja", serif;
+            font-size: 25px;
+            margin: 0;
+        }
+        .contentBox__button {
+            border: 0;
+            background-color: transparent;
+        }
+        contentBox__button:hover {
+            cursor: pointer;
+            color: #2359aa;
+        }
+        .contentBox__close {
+            font-family: "Loja", serif;
+            font-size: 25px;
+            background-color: #509350;
+            color: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+
