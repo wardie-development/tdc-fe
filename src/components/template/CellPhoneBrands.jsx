@@ -1,13 +1,18 @@
 import React from "react";
 import {getBrandNames} from "../../integration.js";
 import './style/CellPhoneBrands.css'
+import {useNavigate} from "react-router-dom";
 
 export const CellPhoneBrands = () => {
+  const navigate = useNavigate();
   const [brandNames, setBrandNames] = React.useState([])
 
   React.useEffect(() => {
-    const token = 'c8df1335445043df8e821f81153782fe'
-    getBrandNames(token).then(response => setBrandNames(response))
+    const token = localStorage.getItem('token')
+    getBrandNames(token).then(response => setBrandNames(response)).catch(() => {
+      localStorage.removeItem('token')
+      navigate('/autenticar/')
+    })
   },[])
 
   return (

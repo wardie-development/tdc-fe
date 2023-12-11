@@ -1,0 +1,46 @@
+.suggestionPage {
+    height: 100vh;
+    background: #f7f7f7;
+}
+
+.suggestionPage__logoBox {
+    background: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 4px solid #23a455;
+    margin-bottom: 20px;
+}
+
+.suggestionPage__title {
+    font-family: "Loja", serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+    color: #505652;
+}
+
+.suggestionPage__logoBox > img {
+    width: 125px;
+}
+
+.suggestionPage__form {
+    align-items: flex-end;
+    min-height: 240px;
+    margin-top: 45px;
+    padding-inline: 10px;
+}
+
+.suggestionPage__formButton {
+    background: #23a455;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+    width: 70px;
+    display: block;
+    margin-left: auto;
+}

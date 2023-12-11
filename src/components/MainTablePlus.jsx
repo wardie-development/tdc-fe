@@ -4,15 +4,21 @@ import {getBrands} from "../integration.js";
 import './style/MainTablePlus.css'
 import {SearchInput} from "./atoms/SearchInput.jsx";
 import {ScreenProtectors} from "./molecules/ScreenProtectors.jsx";
+import {useNavigate} from "react-router-dom";
 
 export const MainTablePlus = () => {
   const [brands, setBrands] = React.useState([])
   const [filteredBrands, setFilteredBrands] = React.useState([])
   const [search, setSearch] = React.useState('')
+  
+  const navigate = useNavigate();
 
   React.useEffect(() => {
-    const token = 'c8df1335445043df8e821f81153782fe'
-    getBrands(token).then(response => setBrands(response))
+    const token = localStorage.getItem('token')
+    getBrands(token).then(response => setBrands(response)).catch(() => {
+      localStorage.removeItem('token')
+      navigate('/autenticar/')
+    })
   },[])
   
   const handleSearch = (value) => {

@@ -1,0 +1,66 @@
+.authenticationPage {
+    background: #027b55;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authenticationForm {
+    background: #eaeaea;
+    border-radius: 15px;
+    width: 85%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.authenticationForm__logoBox {
+    background: #192230;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.authenticationForm__logoBox > img {
+    width: 100px;
+}
+.authenticationForm__title {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 20px;
+}
+.authenticationForm__inputGroup {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+.authenticationForm__loginButton {
+    background: #008f57;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.authenticationForm__authorMessage {
+    text-align: center;
+    margin-top: 45px;
+    color: #666;
+    font-size:13pt;
+}
+
+.authenticationForm__errorMessage {
+    margin: 0;
+    height: 20px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
