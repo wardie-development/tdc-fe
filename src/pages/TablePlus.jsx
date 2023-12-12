@@ -10,6 +10,7 @@ import {Modal} from "../components/atoms/Modal.jsx";
 export const TablePlus = () => {
   const navigate = useNavigate();
   const [newCellPhones, setNewCellPhones] = React.useState([])
+  const [contentIsVisible, setContentIsVisible] = React.useState(true)
 
   React.useEffect(() => {
     const token = localStorage.getItem('token')
@@ -17,37 +18,49 @@ export const TablePlus = () => {
       localStorage.removeItem('token')
       navigate('/autenticar/')
     })
+    window.addEventListener('focus', () => {
+      setContentIsVisible(true)
+    })
+    window.addEventListener('blur', () => {
+      setContentIsVisible(false)
+    })
   }, [navigate])
 
   return (
     <>
-      {newCellPhones.length > 0 && (
-        <Modal
-          onClose={() => {
-          setNewCellPhones([])
-        }}
-          title='Novos modelos adicionados'
-        >
-          <ul className='newCellPhoneList'>
-            {newCellPhones.map(cellphone => {
-              return (
-                <li
-                  className='newCellPhoneList__item'
-                  key={cellphone.id}
-                >
-                  <p><b>{cellphone.model}</b>  – {cellphone.compatibilities.join(' – ')}</p>
-                </li>
-              )
-            })}
-          </ul>
-        </Modal>)
+      {
+        contentIsVisible && (
+          <>
+            {newCellPhones.length > 0 && (
+              <Modal
+                onClose={() => {
+                  setNewCellPhones([])
+                }}
+                title='Novos modelos adicionados'
+              >
+                <ul className='newCellPhoneList'>
+                  {newCellPhones.map(cellphone => {
+                    return (
+                      <li
+                        className='newCellPhoneList__item'
+                        key={cellphone.id}
+                      >
+                        <p><b>{cellphone.model}</b>  – {cellphone.compatibilities.join(' – ')}</p>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </Modal>)
+            }
+            <Header
+              title='Tabela de películas compatíveis'
+              textButton='PLUS'
+            />
+            <MainTablePlus/>
+            <FooterTablePlus/>
+          </>
+        )
       }
-      <Header
-        title='Tabela de películas compatíveis'
-        textButton='PLUS'
-      />
-      <MainTablePlus/>
-      <FooterTablePlus/>
     </>
   )
 }
