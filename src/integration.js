@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:8000/api/v1';
+const baseUrl = 'https://rtuf4bo9gg.execute-api.us-east-1.amazonaws.com/dev/api/v1';
 const api = axios.create({
   baseURL: baseUrl,
   headers: {
