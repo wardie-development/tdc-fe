@@ -10,7 +10,7 @@ export const Authenticate = () => {
   const navigate = useNavigate();
   const [hasError, setHasError] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(false)
-  
+
   const handleSubmit = (e) => {
     setIsLoading(true)
     e.preventDefault()
@@ -33,7 +33,7 @@ export const Authenticate = () => {
           <SearchInput isCircle={false} onChange={() => {setHasError(false)}} placeholder="Senha" type="password" style={{width: "calc(100% - 14px)"}}/>
           <button type="submit" disabled={isLoading} className="authenticationForm__loginButton">Entrar</button>
         </div>
-        <p className="authenticationForm__authorMessage">© 2023 Técnicos de Celular</p>
+        <p className="authenticationForm__authorMessage">© TDC Soluções</p>
       </form>
     </main>
   )

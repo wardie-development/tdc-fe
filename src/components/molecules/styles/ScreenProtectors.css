@@ -37,3 +37,9 @@
     background-image: url("../../../assets/water-mark.png");
     opacity: .1;
 }
+
+@media screen and (min-width: 768px) {
+    .listCompatibilities__item {
+        width: 90%;
+    }
+}

@@ -10,7 +10,7 @@ export const MainTablePlus = () => {
   const [brands, setBrands] = React.useState([])
   const [filteredBrands, setFilteredBrands] = React.useState([])
   const [search, setSearch] = React.useState('')
-  
+
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -20,12 +20,12 @@ export const MainTablePlus = () => {
       navigate('/autenticar/')
     })
   },[])
-  
+
   const handleSearch = (value) => {
     if (value === '') {
       return setFilteredBrands([])
     }
-    
+
     const filteredBrands = brands.filter(brand => brand.cellphones.some(cellphone => {
       const cellphoneString = `${cellphone.brand} ${cellphone.model} ${cellphone.compatibilities.join(' ')}`
       return cellphoneString.toLowerCase().includes(value.toLowerCase())
@@ -43,14 +43,16 @@ export const MainTablePlus = () => {
   return (
     <main className='mainTablePlus'>
       <CellPhoneBrands/>
-      <SearchInput
-        onChange={(e) => {
-          const value = e.target.value
-          handleSearch(value)
-          setSearch(value)
-        }}
-        value={search}
-        placeholder={'Pesquise um modelo aqui'}/>
+      <div className="mainTablePlus__searchBox">
+        <SearchInput
+          onChange={(e) => {
+            const value = e.target.value
+            handleSearch(value)
+            setSearch(value)
+          }}
+          value={search}
+          placeholder={'Pesquise um modelo aqui'}/>
+      </div>
       <ScreenProtectors
         screenProtectorsList={filteredBrands.length > 0 ? filteredBrands : brands}
         search={search}
