@@ -27,10 +27,10 @@
     width: 100px;
 }
 .authenticationForm__title {
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 500;
     text-align: center;
-    margin: 0 0 20px;
+    margin: 20px 0;
     font-family: "Loja", serif;
 }
 .authenticationForm__inputGroup {
