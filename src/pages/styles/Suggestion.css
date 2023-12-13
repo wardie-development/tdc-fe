@@ -44,3 +44,20 @@
     display: block;
     margin-left: auto;
 }
+
+@media screen and (min-width: 768px) {
+    .suggestionPageForm__topSection {
+        display: flex;
+    }
+    .suggestionPageForm__topInput:nth-child(1) {
+        flex-basis: 33%;
+    }
+    .suggestionPageForm__topInput:nth-child(2) {
+        flex-basis: 66%;
+        margin-left: 10px;
+    }
+    .suggestionPage__form {
+        max-width: 400px;
+        margin-inline: auto;
+    }
+}

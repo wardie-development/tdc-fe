@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import './styles/SearchInput.css';
 
-export const SearchInput = ({placeholder, onChange, value, type = 'text', isCircle = true, style = {}, isTextArea = false, rows = 1}) => {
+export const SearchInput = ({placeholder, onChange, value, type = 'text', isCircle = true, style = {}, isTextArea = false, rows = 1, className=""}) => {
   return (
     isTextArea ?
     <textarea
-      className='searchInput'
+      className={`searchInput ${className}`}
       placeholder={placeholder}
       onChange={onChange}
       value={value}
@@ -13,7 +13,7 @@ export const SearchInput = ({placeholder, onChange, value, type = 'text', isCirc
       style={{borderRadius: isCircle ? '50px' : '5px', ...style}}
     /> :
     <input
-      className='searchInput'
+      className={`searchInput ${className}`}
       type={type}
       placeholder={placeholder}
       onChange={onChange}

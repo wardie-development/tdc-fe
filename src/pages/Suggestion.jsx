@@ -9,7 +9,7 @@ export const Suggestion = () => {
   const [isLoading, setIsLoading] = React.useState(false)
   const navigate = useNavigate();
   const inputStyle = {borderColor: "#23a455", borderWidth: 2, width: "calc(100% - 14px)", marginBottom: 10, height: 35, color: "#505652"}
-  
+
   const handleSubmit = (e) => {
     setIsLoading(true)
     const token = localStorage.getItem('token')
@@ -19,12 +19,12 @@ export const Suggestion = () => {
       whatsapp: e.target[1].value,
       suggestion: e.target[2].value
     }
-    
+
     sendSuggestion(token, payload).then(() => {
       navigate('/tabela-plus/')
     }).catch((response) => {
       const isUnauthorized = response.status === 403
-      
+
       if (isUnauthorized) {
         localStorage.removeItem('token')
         navigate('/autenticar/')
@@ -44,8 +44,10 @@ export const Suggestion = () => {
         [sugestões]
       </p>
       <form className="suggestionPage__form" onSubmit={handleSubmit}>
-        <SearchInput onChange={() => {}} placeholder="Seu Nome" isCircle={false} style={inputStyle}/>
-        <SearchInput onChange={() => {}} placeholder="Seu WhatsApp" isCircle={false} style={inputStyle}/>
+        <div className="suggestionPageForm__topSection">
+          <SearchInput onChange={() => {}} placeholder="Seu Nome" isCircle={false} style={inputStyle} className="suggestionPageForm__topInput"/>
+          <SearchInput onChange={() => {}} placeholder="Seu WhatsApp" isCircle={false} style={inputStyle} className="suggestionPageForm__topInput"/>
+        </div>
         <SearchInput onChange={() => {}} placeholder="Escreva sua mensagem aqui" isCircle={false} style={{...inputStyle, resize: "vertical",  height: 90}} isTextArea/>
         <button disabled={isLoading} type="submit" className="suggestionPage__formButton">Enviar</button>
       </form>
