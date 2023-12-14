@@ -54,7 +54,7 @@
 .authenticationForm__authorMessage {
     text-align: center;
     margin-top: 45px;
-    color: #666;
+    color: rgba(102, 102, 102, 0.42);
     font-size:13pt;
 }
 
