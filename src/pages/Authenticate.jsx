@@ -4,6 +4,7 @@ import {SearchInput} from "../components/atoms/SearchInput.jsx";
 import {authenticate} from "../integration.js";
 import {useNavigate} from "react-router-dom";
 import React from "react";
+import gifAuthenticate from '../assets/gifAuthenticate.gif'
 
 
 export const Authenticate = () => {
@@ -33,8 +34,9 @@ export const Authenticate = () => {
           <SearchInput isCircle={false} onChange={() => {setHasError(false)}} placeholder="Senha" type="password" style={{width: "calc(100% - 14px)"}}/>
           <button type="submit" disabled={isLoading} className="authenticationForm__loginButton">Entrar</button>
         </div>
-        <p className="authenticationForm__authorMessage">© TDC Soluções</p>
+        <img className='authenticationForm__gif' src={gifAuthenticate} alt="Gif" />
       </form>
+      <p className="authenticationForm__authorMessage">© TDC Soluções</p>
     </main>
   )
 }

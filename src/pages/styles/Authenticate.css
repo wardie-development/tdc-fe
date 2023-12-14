@@ -1,7 +1,8 @@
 .authenticationPage {
+    display: flex;
+    flex-direction: column;
     background: #027b55;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -54,7 +55,7 @@
 .authenticationForm__authorMessage {
     text-align: center;
     margin-top: 45px;
-    color: rgba(102, 102, 102, 0.42);
+    color: rgba(255, 255, 255, 0.55);
     font-size:13pt;
 }
 
@@ -64,4 +65,11 @@
     text-align: center;
     color: red;
     font-weight: bold;
+}
+
+.authenticationForm__gif {
+    width: 27%;
+    height: 21%;
+    display: block;
+    margin-inline: auto;
 }
