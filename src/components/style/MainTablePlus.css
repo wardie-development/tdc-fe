@@ -21,4 +21,7 @@
     .mainTablePlus__searchBox {
         max-width: 500px;
     }
+    .mainTablePlus {
+        padding-bottom: 70px;
+    }
 }

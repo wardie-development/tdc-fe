@@ -1,12 +1,15 @@
 import './styles/CompatibilityBrands.css'
 
 const CellphoneLine = ({cellphone, search}) => {
-  const removeMappedBrands = c => c.replace("Galaxy", "").replace("Xiaomi", "").replace("Motorola", "").replace("Oppo", "")
+  const removeMappedBrands = c => c.replace("Galaxy", "").replace("Xiaomi", "").replace("Motorola", "").replace("Oppo", "").replace("Samsung", "")
+  
   const searchHighlight = `<span style='background-color: yellow; color: red'>${search}</span>`
 
-  const cellPhoneModel = cellphone.model.split(' ').at(-1)
-  const mainCellphone = `${cellphone.brand} ${cellPhoneModel}`
-  const cellphoneString = `<span style="font-weight: 500">${mainCellphone}</span> – ${cellphone.compatibilities.map(removeMappedBrands).join(' – ')}`
+  const isOnlyModel = ["Samsung", "Motorola", "Apple"].includes(cellphone.brand)
+  
+  const mainTitle = isOnlyModel ? cellphone.model : `${cellphone.brand} ${cellphone.model}`
+  
+  const cellphoneString = `<span style="font-weight: 500">${mainTitle.replace("Galaxy", "Samsung")}</span> – ${cellphone.compatibilities.map(removeMappedBrands).join(' – ')}`
 
   return (
     <p className="compatibilityRow__text" dangerouslySetInnerHTML={{__html: cellphoneString.replace(search, searchHighlight)}} />
