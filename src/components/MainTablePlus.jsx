@@ -1,23 +1,44 @@
 import {CellPhoneBrands} from "./template/CellPhoneBrands.jsx";
 import React from "react";
-import {getBrands} from "../integration.js";
+import {getBrandNames, getBrands} from "../integration.js";
 import './style/MainTablePlus.css'
 import {SearchInput} from "./atoms/SearchInput.jsx";
 import {ScreenProtectors} from "./molecules/ScreenProtectors.jsx";
 import {useNavigate} from "react-router-dom";
+import gifAuthenticate from '../assets/gifAuthenticate.gif'
 
 export const MainTablePlus = () => {
   const [brands, setBrands] = React.useState([])
+  const [brandNames, setBrandNames] = React.useState([])
   const [filteredBrands, setFilteredBrands] = React.useState([])
   const [search, setSearch] = React.useState('')
+  const [contentIsVisible, setContentIsVisible] = React.useState(true)
+  const [isLoading, setIsLoading] = React.useState(true)
 
   const navigate = useNavigate();
 
   React.useEffect(() => {
+    setIsLoading(true)
     const token = localStorage.getItem('token')
-    getBrands(token).then(response => setBrands(response)).catch(() => {
+    
+    getBrandNames(token).then(response => {
+      setBrandNames(response)
+      getBrands(token).then(response => {
+        setBrands(response.filter(brand => brand.cellphones.length > 0))
+        setIsLoading(false)
+      }).catch(() => {
+        localStorage.removeItem('token')
+        navigate('/autenticar/')
+      })
+    }).catch(() => {
       localStorage.removeItem('token')
       navigate('/autenticar/')
+    })
+    window.addEventListener('focus', () => {
+      setContentIsVisible(true)
+    })
+    window.addEventListener('blur', () => {
+      setContentIsVisible(false)
     })
   },[])
 
@@ -39,10 +60,23 @@ export const MainTablePlus = () => {
     })
     setFilteredBrands(filteredCellphones)
   }
+  
+  if (!contentIsVisible) {
+    return <></>
+  }
+  
+  if (isLoading) {
+    return (
+      <main>
+        <img src={gifAuthenticate} alt="Gif" className="mainTablePlusLoading"/>
+        <p style={{textAlign: "center", fontFamily: "Loja", color: "#cecece"}}>Buscando o melhor para você</p>
+      </main>
+    )
+  }
 
   return (
     <main className='mainTablePlus'>
-      <CellPhoneBrands/>
+      <CellPhoneBrands brandNames={brandNames}/>
       <div className="mainTablePlus__searchBox">
         <SearchInput
           onChange={(e) => {

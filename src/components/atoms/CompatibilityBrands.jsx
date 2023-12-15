@@ -1,7 +1,7 @@
 import './styles/CompatibilityBrands.css'
 
 const CellphoneLine = ({cellphone, search}) => {
-  const cellphoneString = `<span style="font-weight: 500">${cellphone.brand} ${cellphone.model}</span> – ${cellphone.compatibilities.join(' – ')}`.replace(search, `<span style='background-color: yellow; color: red'>${search}</span>`)
+  const cellphoneString = `<span style="font-weight: 500">${cellphone.model}</span> – ${cellphone.compatibilities.join(' – ')}`.replace(search, `<span style='background-color: yellow; color: red'>${search}</span>`)
   
   return (
     <p className="compatibilityRow__text" dangerouslySetInnerHTML={{__html: cellphoneString}} />

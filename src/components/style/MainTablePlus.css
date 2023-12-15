@@ -6,6 +6,11 @@
     min-height: 100vh;
     padding-bottom: 50px;
 }
+.mainTablePlusLoading {
+    display: block;
+    margin-inline: auto;
+    max-width: 100px;
+}
 .mainTablePlus__searchBox {
     width: 100%;
     display: flex;
