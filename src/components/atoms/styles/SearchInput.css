@@ -1,8 +1,8 @@
 .searchInput {
     width: 75%;
-    height: 44px;
+    height: 35px;
     border: 1px solid #cecece;
-    color: #cecece;
+    color: rgba(0, 0, 0, 0.4);
     padding-left: 10px;
     box-shadow: rgba(149, 157, 165, 0.02) 0 8px 24px;
     outline: none;
@@ -10,9 +10,15 @@
 }
 
 ::-webkit-input-placeholder {
-    color: rgba(2, 2, 2, 0.15);
+    color: rgba(2, 2, 2, 0.33);
     font-weight: 100;
-    font-size: 15px;
 }
 
-
+@media screen and (min-width: 768px) {
+    ::-webkit-input-placeholder {
+        font-size: 15px;
+    }
+    .searchInput {
+        height: 44px;
+    }
+}
