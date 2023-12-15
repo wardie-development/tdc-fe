@@ -12,13 +12,16 @@ export const FooterTablePlus = () => {
       smooth: "easeInOutQuart",
     });
   }
+  const windowWidth = window.innerWidth;
+  const isDesktop = windowWidth > 768;
+  
   const navigate = useNavigate();
   return (
     <footer className="footerTablePlus">
       <p className="footerTablePlus__suggestion" onClick={() => {
         navigate('/sugerir/')
       }}>Sugerir<ForwardToInboxIcon style={{fontSize: '18px'}}/></p>
-      <button className="footerTablePlus__upButton" onClick={scrollToTop}><ArrowUpwardIcon/></button>
+      <button className="footerTablePlus__upButton" onClick={scrollToTop}><ArrowUpwardIcon style={{fontSize: isDesktop ? 40 : 18}}/></button>
     </footer>
   )
 }

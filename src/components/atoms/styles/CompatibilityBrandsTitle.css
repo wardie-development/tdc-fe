@@ -17,3 +17,12 @@
         display: flex;
         margin: 0 0 0 10px;
     }
+
+@media screen and (min-width: 768px) {
+    .compatibilitiesTitleGroup__title {
+        font-size: 25px;
+    }
+    .compatibilitiesTitleGroup {
+        padding-block: 10px;
+    }
+}

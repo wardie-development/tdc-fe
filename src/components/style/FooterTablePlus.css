@@ -38,8 +38,6 @@
     border-radius: 50%;
     background: #02b143;
     color: #fff;
-    font-size: 20px;
-    font-weight: 200;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,4 +49,29 @@
 .footerTablePlus__upButton:hover {
     opacity: 1;
     cursor: pointer;
+}
+
+.footerTablePlus__upIcon {
+    font-size: 40px;
+}
+
+@media screen and (min-width: 768px) {
+    .footerTablePlus {
+        width: calc(100% - 400px);
+        padding-inline: 200px;
+        height: 60px;
+    }
+    .footerTablePlus__suggestion {
+        font-size: 17px;
+        padding-inline: 20px;
+        padding-block: 5px;
+        border-radius: 20px;
+        width: 100px;
+        font-weight: 400;
+    }
+    .footerTablePlus__upButton {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
 }

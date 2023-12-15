@@ -38,7 +38,7 @@ export const MainTablePlus = () => {
       setContentIsVisible(true)
     })
     window.addEventListener('blur', () => {
-      setContentIsVisible(false)
+      // setContentIsVisible(false)
     })
   },[])
 
