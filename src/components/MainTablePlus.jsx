@@ -20,7 +20,7 @@ export const MainTablePlus = () => {
   React.useEffect(() => {
     setIsLoading(true)
     const token = localStorage.getItem('token')
-    
+
     getBrandNames(token).then(response => {
       setBrandNames(response)
       getBrands(token).then(response => {
@@ -38,7 +38,7 @@ export const MainTablePlus = () => {
       setContentIsVisible(true)
     })
     window.addEventListener('blur', () => {
-      setContentIsVisible(false)
+      // setContentIsVisible(false)
     })
   },[])
 
@@ -60,11 +60,11 @@ export const MainTablePlus = () => {
     })
     setFilteredBrands(filteredCellphones)
   }
-  
+
   if (!contentIsVisible) {
     return <></>
   }
-  
+
   if (isLoading) {
     return (
       <main>
