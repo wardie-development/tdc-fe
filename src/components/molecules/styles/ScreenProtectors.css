@@ -43,4 +43,7 @@
         width: 80%;
         padding: 15px 50px 0;
     }
+    .screenProtectors__list {
+        margin: 15px 0 0 0;
+    }
 }
