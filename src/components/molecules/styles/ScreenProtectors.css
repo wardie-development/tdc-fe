@@ -35,7 +35,7 @@
     right: 0;
     bottom: 0;
     background-image: url("../../../assets/water-mark.png");
-    opacity: .1;
+    opacity: .05;
 }
 
 @media screen and (min-width: 768px) {

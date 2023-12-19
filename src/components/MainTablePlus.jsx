@@ -48,12 +48,12 @@ export const MainTablePlus = () => {
     }
 
     const filteredBrands = brands.filter(brand => brand.cellphones.some(cellphone => {
-      const cellphoneString = `${cellphone.brand} ${cellphone.model} ${cellphone.compatibilities.join(' ')}`
+      const cellphoneString = `${cellphone.brand} ${cellphone.model} ${cellphone.compatibilities}`
       return cellphoneString.toLowerCase().includes(value.toLowerCase())
     }))
     const filteredCellphones = filteredBrands.map(brand => {
       const cellphones = brand.cellphones.filter(cellphone => {
-        const cellphoneString = `${cellphone.brand} ${cellphone.model} ${cellphone.compatibilities.join(' ')}`
+        const cellphoneString = `${cellphone.brand} ${cellphone.model} ${cellphone.compatibilities}`
         return cellphoneString.toLowerCase().includes(value.toLowerCase())
       })
       return {...brand, cellphones}

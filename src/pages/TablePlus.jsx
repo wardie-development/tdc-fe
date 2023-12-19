@@ -35,7 +35,7 @@ export const TablePlus = () => {
                   className='newCellPhoneList__item'
                   key={cellphone.id}
                 >
-                  <p><b>{cellphone.model}</b> – {cellphone.compatibilities.join(' – ')}</p>
+                  <p><b>{cellphone.model}</b> – {cellphone.compatibilities}</p>
                 </li>
               )
             })}
