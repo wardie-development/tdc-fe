@@ -9,6 +9,15 @@
     font-weight: lighter;
 }
 
+.searchInput__cleaner {
+    position: absolute;
+    margin: 0;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
 ::-webkit-input-placeholder {
     color: rgba(2, 2, 2, 0.33);
     font-weight: 100;
@@ -20,5 +29,8 @@
     }
     .searchInput {
         height: 44px;
+    }
+    .searchInput__cleaner {
+        top: 14px;
     }
 }

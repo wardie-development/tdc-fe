@@ -54,7 +54,7 @@ export const Authenticate = () => {
                   cursor: "pointer"
                 }
               }
-              href="https://api.whatsapp.com/send?phone=5575981642302&text=O meu acesso da Tabela Plus atingiu o limite de dispositivos. Podem me ajudar?"
+              href="https://api.whatsapp.com/send?phone=5575981642302&text=O meu acesso da Tabela Plus atingiu o limite de dispositivos.%0a%0aPodem me ajudar?"
               target="_blank"
             >
               Ou clicando aqui

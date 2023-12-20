@@ -109,7 +109,13 @@ export const MainTablePlus = () => {
             setSearch(value)
           }}
           value={search}
-          placeholder={'Pesquise um modelo aqui'}/>
+          placeholder={'Pesquise um modelo aqui'}
+          includeCleaner
+          onClean={() => {
+            setSearch('')
+            setFilteredBrands([])
+          }}
+        />
       </section>
       {isTestAccess && (
         <section className="mainTablePlus__testSection">
