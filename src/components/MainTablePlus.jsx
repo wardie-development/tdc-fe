@@ -6,6 +6,7 @@ import {SearchInput} from "./atoms/SearchInput.jsx";
 import {ScreenProtectors} from "./molecules/ScreenProtectors.jsx";
 import {useNavigate} from "react-router-dom";
 import gifAuthenticate from '../assets/gifAuthenticate.gif'
+import {verifyIsTestAccess} from "../pages/utils.js";
 
 export const MainTablePlus = () => {
   const [brands, setBrands] = React.useState([])
@@ -14,6 +15,7 @@ export const MainTablePlus = () => {
   const [search, setSearch] = React.useState('')
   const [contentIsVisible, setContentIsVisible] = React.useState(true)
   const [isLoading, setIsLoading] = React.useState(true)
+  const [isTestAccess, setIsTestAccess] = React.useState(false)
 
   const navigate = useNavigate();
 
@@ -30,6 +32,7 @@ export const MainTablePlus = () => {
         localStorage.removeItem('token')
         navigate('/autenticar/')
       })
+      setIsTestAccess(verifyIsTestAccess())
     }).catch(() => {
       localStorage.removeItem('token')
       navigate('/autenticar/')
@@ -98,7 +101,7 @@ export const MainTablePlus = () => {
   return (
     <main className='mainTablePlus'>
       <CellPhoneBrands brandNames={brandNames}/>
-      <div className="mainTablePlus__searchBox">
+      <section className="mainTablePlus__searchBox">
         <SearchInput
           onChange={(e) => {
             const value = e.target.value
@@ -107,7 +110,23 @@ export const MainTablePlus = () => {
           }}
           value={search}
           placeholder={'Pesquise um modelo aqui'}/>
-      </div>
+      </section>
+      {isTestAccess && (
+        <section className="mainTablePlus__testSection">
+          <div className="mainTablePlus__button">
+            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6 1C4.34315 1 3 2.34315 3 4V20C3 21.6569 4.34315 23 6 23H18C19.6569 23 21 21.6569 21 20V8.82843C21 8.03278 20.6839 7.26972 20.1213 6.70711L15.2929 1.87868C14.7303 1.31607 13.9672 1 13.1716 1H6ZM5 4C5 3.44772 5.44772 3 6 3H12V8C12 9.10457 12.8954 10 14 10H19V20C19 20.5523 18.5523 21 18 21H6C5.44772 21 5 20.5523 5 20V4ZM18.5858 8L14 3.41421V8H18.5858Z" fill="#FFFFFF"/>
+            </svg>
+            <a
+              className="mainTablePlus__requestFullAccess"
+              href="https://api.whatsapp.com/send?phone=5575981642302&text=Eu quero a versão completa da Tabela Plus!"
+              target="_blank"
+            >
+              [ eu quero a versão completa ]
+            </a>
+          </div>
+        </section>
+      )}
       <ScreenProtectors
         screenProtectorsList={filteredBrands.length > 0 ? filteredBrands : brands}
         search={search}

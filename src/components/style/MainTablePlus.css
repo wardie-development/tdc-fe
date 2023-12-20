@@ -17,11 +17,51 @@
     justify-content: center;
 }
 
+.mainTablePlus__testSection {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 20px;
+    backdrop-filter: blur(2px);
+    margin-bottom: -20px;
+    margin-top: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.mainTablePlus__button {
+    background-color: #02b143;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+.mainTablePlus__button:hover {
+    background-color: #008d34;
+}
+
+.mainTablePlus__requestFullAccess {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 @media screen and (min-width: 768px) {
     .mainTablePlus__searchBox {
         max-width: 500px;
     }
     .mainTablePlus {
         padding-bottom: 70px;
+    }
+    .mainTablePlus__requestFullAccess {
+        font-size: 19px;
+    }
+    .mainTablePlus__button {
+        padding: 5px 40px;
     }
 }

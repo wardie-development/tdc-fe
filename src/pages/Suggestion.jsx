@@ -4,12 +4,20 @@ import {SearchInput} from "../components/atoms/SearchInput.jsx";
 import './styles/Suggestion.css';
 import {useNavigate} from "react-router-dom";
 import {sendSuggestion} from "../integration.js";
+import {verifyIsTestAccess} from "./utils.js";
 
 export const Suggestion = () => {
   const [isLoading, setIsLoading] = React.useState(false)
   const navigate = useNavigate();
   const inputStyle = {borderColor: "#23a455", borderWidth: 2, width: "calc(100% - 14px)", marginBottom: 10, height: 35, color: "#505652"}
 
+  React.useEffect(() => {
+    const isTestAccess = verifyIsTestAccess()
+    
+    if (isTestAccess) {
+      navigate('/tabela-plus/')
+    }
+  }, [navigate])
   const handleSubmit = (e) => {
     setIsLoading(true)
     const token = localStorage.getItem('token')

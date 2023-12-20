@@ -18,6 +18,7 @@ export const Authenticate = () => {
     const password = e.target[0].value
     authenticate(password).then(response => {
       localStorage.setItem('token', response.token)
+      localStorage.setItem('isTest', String(response.is_test_access))
       navigate('/tabela-plus/')
     }).catch(() => setHasError(true))
     setIsLoading(false)
