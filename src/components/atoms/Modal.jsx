@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import './styles/Modal.css';
 
-export const Modal = ({onClose, children, title}) => {
+export const Modal = ({onClose, children, title, style={}}) => {
   return (
     <div className='modal'>
-      <div className='modal__content'>
+      <div className='modal__content' style={style}>
         <div className='contentBox'>
           <p className='contentBox__title'>{title}</p>
         </div>
