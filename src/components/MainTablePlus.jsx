@@ -46,19 +46,40 @@ export const MainTablePlus = () => {
     if (value === '') {
       return setFilteredBrands([])
     }
+    
+    const lowerValue = value.toLowerCase()
 
     const filteredBrands = brands.filter(brand => brand.cellphones.some(cellphone => {
       const cellphoneString = `${cellphone.brand} ${cellphone.model} ${cellphone.compatibilities}`
-      return cellphoneString.toLowerCase().includes(value.toLowerCase())
+      return cellphoneString.toLowerCase().includes(lowerValue)
     }))
     const filteredCellphones = filteredBrands.map(brand => {
       const cellphones = brand.cellphones.filter(cellphone => {
         const cellphoneString = `${cellphone.brand} ${cellphone.model} ${cellphone.compatibilities}`
-        return cellphoneString.toLowerCase().includes(value.toLowerCase())
+        return cellphoneString.toLowerCase().includes(lowerValue)
       })
       return {...brand, cellphones}
     })
-    setFilteredBrands(filteredCellphones)
+    
+    // Put first the cellphones that have the search value in the model
+    const reorderedBrandsBySearch = filteredCellphones.map(brand => {
+      const cellphones = brand.cellphones
+      
+      const reorderedCellphones = cellphones.sort((a, b) => {
+        const aModel = a.model.toLowerCase()
+        const bModel = b.model.toLowerCase()
+        if (aModel.includes(lowerValue) && !bModel.includes(lowerValue)) {
+          return -1
+        }
+        if (!aModel.includes(lowerValue) && bModel.includes(lowerValue)) {
+          return 1
+        }
+        return 0
+      })
+      
+      return {...brand, cellphones: reorderedCellphones}
+    })
+    setFilteredBrands(reorderedBrandsBySearch)
   }
 
   if (!contentIsVisible) {

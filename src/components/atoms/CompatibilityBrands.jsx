@@ -45,8 +45,6 @@ const CellphoneLine = ({ cellphone, search }) => {
     )
   ));
   
-  console.log(highlightedString);
-  
   return (
     <p className="compatibilityRow__text">
       {highlightedString}
