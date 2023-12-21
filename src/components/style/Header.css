@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-top: 4px solid #02b143;
+    border-top: 5px solid #02b143;
     padding: 15px;
 }
     .header__image {
@@ -28,7 +28,7 @@
         .boxText__button {
             background-color: #02b143;
             color: #ffff;
-            font-size: 17px;
+            font-size: 19px;
             font-family: "Loja", serif;
             border-style: double;
             border-width: 3px;
@@ -44,13 +44,18 @@
         align-items: center;
     }
     .boxText__title {
-        font-size: 25px;
+        font-size: 24px;
     }
     .boxText__button {
-        margin-left: 20px;
-        font-size: 25px;
+        margin-left: 12px;
+        font-size: 23px;
+        padding: 1px 13px;
     }
     .header {
-        padding: 21px;
+        padding: 21px 21px 12px;
+    }
+    .header__image {
+        height: 50px;
+        margin-bottom: 20px;
     }
 }
