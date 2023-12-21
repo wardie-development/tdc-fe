@@ -25,6 +25,7 @@
     padding: 15px 15px 0;
     list-style: none;
     overflow: hidden;
+    width: 90%;
 }
 
 .listCompatibilities__item::before {
@@ -40,8 +41,8 @@
 
 @media screen and (min-width: 768px) {
     .listCompatibilities__item {
-        width: 80%;
-        padding: 15px 50px 0;
+        width: 75%;
+        padding: 15px 40px 0;
     }
     .screenProtectors__list {
         margin: 15px 0 0 0;
