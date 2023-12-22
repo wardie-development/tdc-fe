@@ -41,7 +41,7 @@ export const MainTablePlus = () => {
       setContentIsVisible(true)
     })
     window.addEventListener('blur', () => {
-      setContentIsVisible(false)
+      // setContentIsVisible(false)
     })
   },[])
 
@@ -108,7 +108,6 @@ export const MainTablePlus = () => {
             handleSearch(value)
             setSearch(value)
           }}
-          type={'search'}
           value={search}
           placeholder={'Pesquise um modelo aqui'}
           includeCleaner
