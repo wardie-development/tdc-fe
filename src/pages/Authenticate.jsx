@@ -18,6 +18,13 @@ export const Authenticate = () => {
     setIsLoading(true)
     e.preventDefault()
     const password = e.target[0].value
+    
+    if (password === 0) {
+      setHasError(true)
+      setIsLoading(false)
+      return
+    }
+    
     authenticate(password).then(response => {
       localStorage.setItem('token', response.token)
       localStorage.setItem('isTest', String(response.is_test_access))
@@ -62,14 +69,14 @@ export const Authenticate = () => {
           </div>
         </Modal>
       )}
-      <form onSubmit={handleSubmit} className="authenticationForm">
+      <form onSubmit={handleSubmit} className="authenticationForm" method="POST" action>
         <div className="authenticationForm__logoBox">
           <img src={logoTdc} alt="Logo" />
         </div>
         <p className="authenticationForm__title" style={{marginBottom: hasError ? 0 : 20}}>TABELA DE PELÍCULAS PLUS</p>
         {hasError && <p className="authenticationForm__errorMessage">Senha inválida</p>}
         <div className="authenticationForm__inputGroup">
-          <SearchInput isCircle={false} onChange={() => {setHasError(false)}} placeholder="Senha" type="password" style={{width: "calc(100% - 14px)"}}/>
+          <SearchInput isCircle={false} onChange={() => {setHasError(false)}} placeholder="Senha" type="password" style={{width: "calc(100% - 14px)"}} required/>
           <button type="submit" disabled={isLoading} className="authenticationForm__loginButton">Entrar</button>
         </div>
         <img className='authenticationForm__gif' src={gifAuthenticate} alt="Gif" />

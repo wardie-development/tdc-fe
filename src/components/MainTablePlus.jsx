@@ -108,6 +108,7 @@ export const MainTablePlus = () => {
             handleSearch(value)
             setSearch(value)
           }}
+          type={'search'}
           value={search}
           placeholder={'Pesquise um modelo aqui'}
           includeCleaner
