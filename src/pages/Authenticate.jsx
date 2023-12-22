@@ -109,7 +109,7 @@ export const Authenticate = () => {
         <p className="authenticationForm__title" style={{marginBottom: hasError ? 0 : 20}}>TABELA DE PELÍCULAS PLUS</p>
         {hasError && <p className="authenticationForm__errorMessage">Senha inválida</p>}
         <div className="authenticationForm__inputGroup">
-          <SearchInput isCircle={false} onChange={() => {setHasError(false)}} placeholder="Senha" type="password" style={{width: "calc(100% - 14px)"}} required enterKeyHint="go"/>
+          <SearchInput isCircle={false} onChange={() => {setHasError(false)}} placeholder="Senha" type="password" style={{width: "calc(100% - 14px)", color: "#222"}} required enterKeyHint="go"/>
           <button type="submit" disabled={isLoading} className="authenticationForm__loginButton">Entrar</button>
         </div>
         <img className='authenticationForm__gif' src={gifAuthenticate} alt="Gif" />
