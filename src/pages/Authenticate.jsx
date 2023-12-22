@@ -13,6 +13,7 @@ export const Authenticate = () => {
   const [hasError, setHasError] = React.useState(false)
   const [isLoading, setIsLoading] = React.useState(false)
   const [limitAccessModal, setLimitAccessModal] = React.useState(false)
+  const [accessExpiredModal, setAccessExpiredModal] = React.useState(false)
 
   const handleSubmit = (e) => {
     setIsLoading(true)
@@ -36,6 +37,14 @@ export const Authenticate = () => {
         
         if (message === 'Limite de acessos atingido') {
           setLimitAccessModal(true)
+          return
+        }
+      }
+      if (responseBody.non_field_errors) {
+        const message = responseBody.non_field_errors[0]
+        
+        if (message === 'Acesso expirado') {
+          setAccessExpiredModal(true)
           return
         }
       }
@@ -65,6 +74,30 @@ export const Authenticate = () => {
               target="_blank"
             >
               Ou clicando aqui
+            </a>
+          </div>
+        </Modal>
+      )}
+      {accessExpiredModal && (
+        <Modal title="Acesso expirado" onClose={() => {setAccessExpiredModal(false)}} style={{maxWidth: 500}}>
+          <p>Caro(a) cliente, o seu acesso expirou. Clique no link abaixo para renovar o seu acesso!</p>
+          
+          <div style={{display: "flex", justifyContent: "center"}}>
+            <a
+              style={
+                {
+                  textAlign: "center",
+                  backgroundColor: "#2359aa",
+                  padding: "10px 20px",
+                  color: "#fff",
+                  borderRadius: 5,
+                  cursor: "pointer"
+                }
+              }
+              href="https://api.whatsapp.com/send?phone=5575981642302&text=Olá, quero renovar o meu acesso da Tabela Plus!"
+              target="_blank"
+            >
+              Renovar meu acesso
             </a>
           </div>
         </Modal>
