@@ -40,7 +40,7 @@ ScreenProtectors.propTypes = {
         PropTypes.shape({
           brand: PropTypes.string.isRequired,
           model: PropTypes.string.isRequired,
-          compatibilities: PropTypes.arrayOf(PropTypes.string).isRequired
+          compatibilities: PropTypes.string.isRequired
         })
       ).isRequired
     })

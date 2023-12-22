@@ -23,9 +23,9 @@ export const SearchInput = ({placeholder, onChange, value, type = 'text', isCirc
             style={{borderRadius: isCircle ? '50px' : '5px', ...style, width: "100%"}}
             required={required}
             enterKeyHint={enterKeyHint}
-            onKeyDown={(e) => {
+            onKeyUp={(e) => {
               if (e.key === "Enter") {
-                document.body.focus();
+                e.target.blur();
               }
             }}
           />
@@ -47,9 +47,9 @@ export const SearchInput = ({placeholder, onChange, value, type = 'text', isCirc
           style={{borderRadius: isCircle ? '50px' : '5px', ...style}}
           required={required}
           enterKeyHint={enterKeyHint}
-          onKeyDown={(e) => {
+          onKeyUp={(e) => {
             if (e.key === "Enter") {
-              document.body.focus();
+              e.target.blur();
             }
           }}
         />
