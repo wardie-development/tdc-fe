@@ -23,6 +23,11 @@ export const SearchInput = ({placeholder, onChange, value, type = 'text', isCirc
             style={{borderRadius: isCircle ? '50px' : '5px', ...style, width: "100%"}}
             required={required}
             enterKeyHint={enterKeyHint}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                document.body.focus();
+              }
+            }}
           />
           {value.length > 0 && (
             <p className="searchInput__cleaner" onClick={onClean}>
@@ -42,6 +47,11 @@ export const SearchInput = ({placeholder, onChange, value, type = 'text', isCirc
           style={{borderRadius: isCircle ? '50px' : '5px', ...style}}
           required={required}
           enterKeyHint={enterKeyHint}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              document.body.focus();
+            }
+          }}
         />
       )
   )
