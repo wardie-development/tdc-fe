@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import './styles/SearchInput.css';
 
-export const SearchInput = ({placeholder, onChange, value, type = 'text', isCircle = true, style = {}, isTextArea = false, rows = 1, className="", includeCleaner = false, onClean = () => {}, required=false}) => {
+export const SearchInput = ({placeholder, onChange, value, type = 'text', isCircle = true, style = {}, isTextArea = false, rows = 1, className="", includeCleaner = false, onClean = () => {}, required=false, enterKeyHint="enter"}) => {
   return (
     isTextArea ?
     <textarea
@@ -22,6 +22,7 @@ export const SearchInput = ({placeholder, onChange, value, type = 'text', isCirc
             value={value}
             style={{borderRadius: isCircle ? '50px' : '5px', ...style, width: "100%"}}
             required={required}
+            enterKeyHint={enterKeyHint}
           />
           {value.length > 0 && (
             <p className="searchInput__cleaner" onClick={onClean}>
@@ -40,6 +41,7 @@ export const SearchInput = ({placeholder, onChange, value, type = 'text', isCirc
           value={value}
           style={{borderRadius: isCircle ? '50px' : '5px', ...style}}
           required={required}
+          enterKeyHint={enterKeyHint}
         />
       )
   )

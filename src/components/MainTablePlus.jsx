@@ -41,7 +41,7 @@ export const MainTablePlus = () => {
       setContentIsVisible(true)
     })
     window.addEventListener('blur', () => {
-      // setContentIsVisible(false)
+      setContentIsVisible(false)
     })
   },[])
 
@@ -116,6 +116,7 @@ export const MainTablePlus = () => {
             setSearch('')
             setFilteredBrands([])
           }}
+          enterKeyHint="search"
         />
       </section>
       {isTestAccess && (
