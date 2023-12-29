@@ -64,7 +64,6 @@ export const MainTablePlus = () => {
       return {...brand, cellphones}
     })
     
-    // Put first the cellphones that have the search value in the model
     const reorderedBrandsBySearch = filteredCellphones.map(brand => {
       const cellphones = brand.cellphones
       
@@ -82,7 +81,26 @@ export const MainTablePlus = () => {
       
       return {...brand, cellphones: reorderedCellphones}
     })
-    setFilteredBrands(reorderedBrandsBySearch)
+    
+    const reorderedBySearch = reorderedBrandsBySearch.sort((a, b) => {
+      const aHasHighlight = a.cellphones.some(cellphone => {
+        const firstPart = `${cellphone.brand} ${cellphone.model}`.split(' – ')[0].toLowerCase();
+        return firstPart.includes(lowerValue);
+      });
+      const bHasHighlight = b.cellphones.some(cellphone => {
+        const firstPart = `${cellphone.brand} ${cellphone.model}`.split(' – ')[0].toLowerCase();
+        return firstPart.includes(lowerValue);
+      });
+      
+      if (aHasHighlight && !bHasHighlight) {
+        return -1;
+      } else if (!aHasHighlight && bHasHighlight) {
+        return 1;
+      }
+      return 0;
+    });
+    
+    setFilteredBrands(reorderedBySearch)
   }
 
   if (!contentIsVisible) {

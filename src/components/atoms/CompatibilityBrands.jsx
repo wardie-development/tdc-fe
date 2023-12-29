@@ -15,35 +15,25 @@ const CellphoneLine = ({ cellphone, search }) => {
   
   const parts = cellphoneString.split(" – ");
   
-  const highlightedString = parts.map((part, index) => (
-    index === 0 ? (
-      <span key={index} style={{ fontWeight: 500 }}>
-        {search ? (
-          part.split(new RegExp(`(${search})`, "ig")).map((subPart, subIndex) => (
-            subIndex % 2 === 0 ? (
-              <span key={subIndex}>
-                {subPart}
-              </span>
-            ) : (
-              <span key={subIndex} style={searchHighlightStyle}>
-                {subPart}
-              </span>
-            )
-          ))
-        ) : (
-          part
-        )}
-      </span>
-    ) : (
-      <span key={index}>
-        {" – "}{search && part.toLowerCase() === search.toLowerCase() ? (
-        <span style={searchHighlightStyle}>{part}</span>
-      ) : (
-        part
-      )}
-      </span>
-    )
-  ));
+  const highlightedString = parts.map((part, index) => {
+    const isBold = index === 0;
+    const partStyle = isBold ? { fontWeight: 500 } : {};
+    
+    return (
+      <span key={index} style={partStyle}>
+      {part.split(new RegExp(`(${search})`, 'ig')).map((subPart, subIndex) => {
+        const highlight = subIndex % 2 !== 0;
+        const subPartStyle = highlight ? searchHighlightStyle : {};
+        return (
+          <span key={subIndex} style={subPartStyle}>
+            {subPart}
+          </span>
+        );
+      })}
+        {index < parts.length - 1 && " – "}
+    </span>
+    );
+  });
   
   return (
     <p className="compatibilityRow__text">
