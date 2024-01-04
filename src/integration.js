@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const baseUrl = 'https://api.tecnicosdecelular.com.br/api/v1';
+const isLocal = true;
+
+const baseUrl = isLocal ? 'http://localhost:8000/api/v1' : 'https://api.tecnicosdecelular.com.br/api/v1';
 const api = axios.create({
   baseURL: baseUrl,
   headers: {
@@ -33,4 +35,12 @@ export const getNewCellPhones = async (token) => {
   return response.data;
 }
 
+export const getOrderListModels = async () => {
+  const response = await api.get('/order-list/');
+  return response.data;
+}
 
+export const createOrder = async payload => {
+  const response = await api.post('/order-list/', payload);
+  return response.data;
+}

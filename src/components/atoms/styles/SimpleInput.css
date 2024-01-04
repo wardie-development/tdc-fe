@@ -1,0 +1,7 @@
+.simpleInput {
+    width: calc(100% - 10px);
+    border: 1px solid #cecece;
+    outline: none;
+    padding: 10px 5px;
+    margin: 0;
+}

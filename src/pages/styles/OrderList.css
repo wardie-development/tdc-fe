@@ -1,0 +1,16 @@
+.orderListPage__content {
+    padding: 10px;
+}
+.orderListPage__inputGroup {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.orderListPage__inputGroup > label {
+    flex-basis: 49%;
+}
+
+.orderListPage__models {
+    margin-block: 50px;
+}
