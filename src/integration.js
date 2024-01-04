@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const isLocal = true;
+const isLocal = false;
 
 const baseUrl = isLocal ? 'http://localhost:8000/api/v1' : 'https://api.tecnicosdecelular.com.br/api/v1';
 const api = axios.create({
