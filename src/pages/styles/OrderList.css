@@ -1,3 +1,8 @@
+.orderListPage {
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    color: #616581
+}
 .orderListPage__content {
     padding: 10px;
 }
@@ -8,9 +13,95 @@
 }
 
 .orderListPage__inputGroup > label {
-    flex-basis: 49%;
+    flex-basis: 48%;
 }
 
 .orderListPage__models {
-    margin-block: 50px;
+    margin-block: 30px;
+}
+table, th, td {
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.orderListTableCell {
+    padding: 15px;
+    width: 25%;
+    font-weight: 300;
+}
+
+.orderListTableCell:nth-child(1) {
+    width: 50%;
+}
+
+.orderListTableHeadCell {
+    text-align: left;
+    padding: 5px 10px;
+    font-weight: 500;
+}
+.orderListModelTable__box {
+    max-height: 400px;
+    overflow-y: scroll;
+    position: relative;
+}
+.orderListModelTableHead {
+    position: sticky;
+    top: 0;
+    background: #f7f7f7;
+}
+.myOrders__title {
+    color: #00af4c;
+    font-weight: 300;
+    font-size: 22px;
+    margin: 0;
+}
+.myOrders__notFoundText {
+    color: #17a2b8;
+    font-size: 14px;
+    margin-block: 5px;
+    padding: 3px;
+    border: 1px solid #ddd
+}
+
+.saveOrderButton {
+    display: block;
+    margin: 30px auto;
+    font-size: 18px;
+    color: #fff;
+    background-color: #00af4c;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: 300;
+}
+
+.orderListModelTable {
+    width: 100%;
+}
+.myOrdersTableCell {
+    padding: 15px;
+    width: 20%;
+    text-align: center;
+    font-weight: 300;
+}
+.myOrdersTableCell:nth-child(1) {
+    text-align: left;
+    width: 50%;
+}
+.myOrdersTableCell:nth-child(4) {
+    width: 10%;
+    padding: 0;
+}
+.removerMyOrderButton {
+    background-color: #dc3545;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 200;
+    margin: 0 auto;
+    cursor: pointer;
 }

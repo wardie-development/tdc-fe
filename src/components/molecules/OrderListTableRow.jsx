@@ -24,21 +24,25 @@ const OrderListTableRow = ({model, onChange, myOrders}) => {
     }
   }, [myOrders])
   
+  const simpleInputStyle = {textAlign: "center", borderRadius: 2}
+  
   return (
     <tr>
-      <td>{model.name}</td>
-      <td>
+      <td className="orderListTableCell">{model.name}</td>
+      <td className="orderListTableCell">
         <SimpleInput
           onChange={(e) => {handleChange(e, "peliculas", setScreenProtectors)}}
           value={screenProtectors || "0"}
           type={"number"}
+          style={simpleInputStyle}
         />
       </td>
-      <td>
+      <td className="orderListTableCell">
         <SimpleInput
           onChange={(e) => {handleChange(e, "capinhas", setCases)}}
           value={cases || "0"}
           type={"number"}
+          style={simpleInputStyle}
         />
       </td>
     </tr>
