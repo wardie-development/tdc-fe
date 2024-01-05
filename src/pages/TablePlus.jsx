@@ -6,6 +6,7 @@ import {useNavigate} from "react-router-dom";
 import React from "react";
 import {getNewCellPhones} from "../integration.js";
 import {Modal} from "../components/atoms/Modal.jsx";
+import {verifyIsTestAccess} from "./utils.js";
 
 export const TablePlus = () => {
   const navigate = useNavigate();
@@ -44,7 +45,6 @@ export const TablePlus = () => {
       }
       <Header
         title='Tabela de películas compatíveis'
-        textButton='PLUS'
       />
       <MainTablePlus/>
       <FooterTablePlus/>
