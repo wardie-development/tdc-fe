@@ -43,6 +43,20 @@ export const MainTablePlus = () => {
     window.addEventListener('blur', () => {
       setContentIsVisible(false)
     })
+    const possibleKeys = ["Enter", "Backspace", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", ",", ".", "Shift", "CapsLock"]
+    window.addEventListener('keydown', (e) => {
+      if (!e.key.match(/^[A-Za-z0-9 ]$/) && !possibleKeys.includes(e.key)) {
+        setContentIsVisible(false);
+      }
+    })
+    window.addEventListener('keyup', (e) => {
+      if (!e.key.match(/^[A-Za-z0-9 ]$/) && !possibleKeys.includes(e.key)) {
+        setContentIsVisible(true);
+      }
+    })
+    window.addEventListener('click', () => {
+      setContentIsVisible(true);
+    })
   },[])
 
   const handleSearch = (value) => {
