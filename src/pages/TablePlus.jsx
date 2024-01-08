@@ -45,6 +45,7 @@ export const TablePlus = () => {
       }
       <Header
         title='Tabela de películas compatíveis'
+        textButton={verifyIsTestAccess() ? '' : 'PLUS'}
       />
       <MainTablePlus/>
       <FooterTablePlus/>
